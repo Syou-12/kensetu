@@ -1,0 +1,472 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+    font-family: "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "Yu Mincho Light", YuMincho, "Yu Mincho", 游明朝体, sans-serif;
+    font-weight: 400;
+}
+
+.wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*ヘッダー*/
+header {
+    color: #000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-left: 80px;
+}
+
+.nav .navi ul {
+    width: 520px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-left: 90px;
+    margin-right: 20px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    color: #000;
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav img {
+    width: 13rem;
+
+}
+
+.mein-text {
+    font-size: 4.8rem;
+}
+
+h1 {
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* スライドショー　 (復習内容) */
+#mein-v {
+    height: 720px;
+    position: relative;
+    margin-bottom: 120px;
+}
+
+#mein-v .mein-text {
+    position: absolute;
+    top: 280px;
+    left: 10%;
+    z-index: 10;
+}
+
+#mein-v .fade li {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* 最初は3枚の画像を非表示にしておく */
+    opacity: 0;
+    /*
+    アニメーションを実行
+    fade：下で定義している「@keyframes fade」を実行
+    15s：「@keyframes fade」の処理を15秒かけて実行
+    infinite：アニメーションの処理を無限に繰り返す
+    */
+    animation: fade 15s infinite;
+    list-style: none;
+}
+
+#mein-v .fade li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#mein-v .fade li:nth-child(2) {
+    animation-delay: 5s;
+}
+
+#mein-v .fade li:nth-child(3) {
+    animation-delay: 10s;
+}
+
+#mein-v .fade li img {
+    width: 100%;
+    height: 720px;
+    object-fit: cover;
+}
+
+#mein-v .fade li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0px 0px 20px 20px #fff;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+h2 {
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.news ul {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.news ul li {
+    border-bottom: #000 1px solid;
+    padding: 30px 0;
+    font-size: 1.8rem;
+}
+
+.news ul a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.newsBox {
+    font-size: 1.1rem;
+    border: #000 1px solid;
+    padding: 0.8rem 1rem;
+    margin: 0 30px;
+}
+
+#construct .inner {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+}
+
+.inner-box img {
+    width: 80%;
+}
+
+h3 {
+    font-size: 18.5px;
+}
+
+.inner-box p {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.case-btn {
+    font-size: 2rem;
+    border: #000 1px solid;
+    padding: 15px 40px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    color: #000;
+}
+
+.link {
+    margin-top: 180px;
+    display: flex;
+    padding-bottom: 0;
+}
+
+.link img {
+    width: 100%;
+    border: none;
+    vertical-align: bottom;
+}
+
+.link img:hover {
+    opacity: 0.75;
+}
+
+footer {
+    background: #000;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.footer-menu img {
+    width: 13rem;
+}
+
+.footer-list ul {
+    width: 520px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.footer-list a {
+    color: #fff;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 700px) {
+    .nav img {
+        width: 80px;
+        margin-bottom: 10px;
+        margin-left: -30px;
+    }
+
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        color: inherit;
+        cursor: pointer;
+        font: inherit;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        vertical-align: middle;
+        margin-left: 170px;
+
+    }
+
+    /*ハンバーガーボタン*/
+    .bg-btn {
+        display: block;
+        width: 230px;
+        height: 100px;
+        position: fixed;
+        z-index: 30;
+        border: none;
+        background-color: transparent;
+        margin-top: -95px;
+    }
+
+    .bar {
+        width: 30px;
+        height: 2px;
+        display: block;
+        position: absolute;
+        left: 65%;
+        transform: translateX(-50%);
+        background-color: #000;
+    }
+
+    .bar-top {
+        top: 40px;
+    }
+
+    .bar-mid {
+        top: 60px;
+    }
+
+    .nar-bottom {
+        bottom: 40px;
+    }
+
+    .bg-btn.close .bar-top {
+        transform: translate(-40%, 5px) rotate(45deg);
+        transition: transform .3s;
+    }
+
+    .bg-btn.close .bar-mid {
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    .bg-btn.close .bar-bottom {
+        transform: translate(-40%, -5px) rotate(-45deg);
+        transition: transform .3s;
+    }
+
+    .btn {
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform .3s;
+        width: 100vw;
+        z-index: 30;
+    }
+
+    .navi {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 30;
+    }
+
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 14%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .item {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .noscroll {
+        overflow: hidden;
+    }
+
+    .btn.slide-in {
+        transform: translateX(0);
+    }
+
+    .nav .navi ul {
+        display: flex;
+        flex-direction: column;
+        padding-top: 260px;
+
+    }
+
+    #mein-v {
+        height: 490px;
+        margin-bottom: 80px;
+
+    }
+
+    #mein-v .fade li {
+        width: 100%;
+    }
+
+    #mein-v .mein-text .text {
+        font-size: 30px;
+    }
+
+    .news h2 {
+        margin-top: 280px;
+        margin-bottom: 10px;
+    }
+
+    .news .inner ul li {
+        text-align: left;
+    }
+
+    .news .inner ul li a {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        text-align: left;
+        font-size: 1.2rem;
+    }
+
+    .news .inner ul li a p.detail {
+        width: 100%;
+        margin-top: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    .news .wp .inner {
+        flex-direction: column;
+        margin: 0 auto 50px;
+        width: 95%;
+    }
+    .news ul a {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .news ul li {
+       padding-bottom: 20px;
+    }
+    .newsBox {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+   .inner li p {
+        align-items: center;
+        margin-left: 17px;
+    }
+   .wrapper h2 {
+    margin-bottom: 50px;
+   }
+    #construct .inner {
+        flex-direction: column;
+        margin: 0 auto 50px;
+    }
+    .inner-box img {
+        margin-bottom: 30px;
+    }
+    .link {
+        flex-direction: column;
+    }
+    footer .footer-menu {
+        flex-direction: column-reverse;
+        margin: 0 auto;
+    }
+    footer .footer-menu .footer-list ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        width: auto;
+    }
+    .footer-list ul li {
+        padding-bottom: 20px;
+    }
+}
